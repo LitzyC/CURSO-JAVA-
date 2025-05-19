@@ -41,9 +41,15 @@ public class Exercise11 {
             int palabraVocal=0; //palabras que empiecen con la Vocal
 
             for (String palabra : palabras){
+                //Recorre el arreglo por elemento y en cada iteraccion
+                //palabra toma el valor del arreglo
                 if (!palabra.isEmpty()) {
+                    //Verifica que la cadena no este vacia
                     char primeraLetra=palabra.charAt(0);
+                    //Obtiene el primer caracter de la primera letra
+
                     if ("aeiou".indexOf(primeraLetra)!=-1) {
+                        //Comprueba que la primera letra sea una vocal
                         palabraVocal++;
                     }
                 }

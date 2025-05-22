@@ -15,7 +15,11 @@ public class Persona {
         this.correo = correo;
     }
 
-    public String getNombre() {
+    public String toString(){
+        return "Nombre: "+nombre+" Edad: " + edad + " Correo Electrónico: "+correo;
+    }
+
+     public String getNombre() {
         return this.nombre;
     }
 
@@ -25,6 +29,18 @@ public class Persona {
 
     public String getCorreo(){
         return this.correo;
+    }
+
+    public void setNombre(String nombre){
+        this.nombre=nombre;
+    }
+
+    public void setEdad(int edad){
+        this.edad=edad;
+    }
+
+    public void setCorreo(String correo){
+        this.correo=correo;
     }
 
     public void muestraPersona(){

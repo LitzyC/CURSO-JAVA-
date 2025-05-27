@@ -1,18 +1,12 @@
 package com;
-
-import java.util.ArrayList;
-import java.util.List;
-
 public class Bebida {
     
     String nombre;
     String tamano;
-    List<Bebida> bebidas;
 
     public Bebida(String nombre, String tamano) {
         this.nombre = nombre;
         this.tamano = tamano;
-        this.bebidas = new ArrayList<>();
     }
 
     public void setNombre(String nombre) {
@@ -23,59 +17,51 @@ public class Bebida {
         this.tamano = tamano;
     }  
     
-    
-    public void imprimeBebidas(){
-        bebidas.add(new Refresco("Coca Cola", "500ml", true));
-        bebidas.add(new Zumo("Zumo de Naranja", "300ml", "Naranja"));
-        bebidas.add(new Agua("Agua", "1L", true ));
-    }
-    
-    public String getDescripcion(String nombre, String tamano, boolean conGas) {
-        return "Refresco: " + nombre + ", Tamaño: " + tamano + ", Con gas: " + conGas;
+    public String getDescripcion() {
+        return "Bebida: " + nombre + ", Tamaño: " + tamano;
     }
     
 }
 
 class Refresco extends Bebida{
-    boolean conGas;
+    private boolean conGas;
 
     public Refresco(String nombre, String tamano, boolean conGas) {
         super(nombre, tamano);
-        
-        if (this.conGas == true) {
-            System.out.println("Refresco: " + nombre + ", Tamaño: " +
-            tamano + ", Con gas: Sí." );
-        } else {
-            System.out.println("Refresco: " + nombre + ", Tamaño: " +
-            tamano + ", Con gas: No." );
-        }
-        
+        this.conGas = conGas;
+    }
+    
+    @Override
+    public String getDescripcion() {
+        return "Refresco: " + nombre + ", Tamaño: " + tamano + ", Con gas: " + (conGas ? "Sí" : "No");
     }
 }
 
 
 class Zumo extends Bebida{
-    String fruta;
+    private String fruta;
 
     public Zumo(String nombre, String tamano, String fruta) {
         super(nombre, tamano);
-        System.out.println("Zumo: " + nombre + ", Tamaño: " +
-        tamano + ", Fruta: " + fruta);
+        this.fruta = fruta;
+    }
+    
+    @Override
+    public String getDescripcion() {
+        return "Zumo: " + nombre + ", Tamaño: " + tamano + ", Fruta: " + fruta;
     }
 }
 
 class Agua extends Bebida{
-    boolean mineral;
+    private boolean mineral;
 
     public Agua(String nombre, String tamano, boolean mineral) {
         super(nombre, tamano);
-        
-        if (this.mineral == true) {
-            System.out.println("Refresco: " + nombre + ", Tamaño: " +
-            tamano + ", Agua Mineral: Sí" );
-        } else {
-            System.out.println("Refresco: " + nombre + ", Tamaño: " +
-            tamano + ", Agua Mineral: No." );
-        }
+        this.mineral = mineral;
+    }
+    
+    @Override
+    public String getDescripcion() {
+        return "Agua: " + nombre + ", Tamaño: " + tamano + ", Agua Mineral: " + (mineral ? "Sí" : "No");
     }
 }

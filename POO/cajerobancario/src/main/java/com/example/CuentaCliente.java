@@ -4,6 +4,7 @@ import java.util.Scanner;
 
 public class CuentaCliente {
     //List<CuentaCliente> cuentaCliente = new ArrayList<>();
+    Scanner lectura = new Scanner(System.in);
     
     private String titular;
     private double saldo;
@@ -31,7 +32,6 @@ public class CuentaCliente {
 
     public void depositar(){
         System.out.println("INGRESE EL MONTO A DEPOSITAR:");
-        Scanner lectura = new Scanner(System.in);
         float monto = lectura.nextFloat();
 
         if (monto > 0) {
@@ -48,7 +48,6 @@ public class CuentaCliente {
 
     public void retirar(){
         System.out.println("INGRESE EL MONTO A RETIRAR:");
-        Scanner lectura = new Scanner(System.in);
         double monto = lectura.nextDouble();
 
         if (monto > 0 && monto <= getSaldo()) {
@@ -74,7 +73,6 @@ public class CuentaCliente {
         System.out.println("1.Depositar.");
         System.out.println("2.Retirar.");
         System.out.println("3.Consultar el saldo.");
-        Scanner lectura = new Scanner(System.in);
         int operacion = lectura.nextInt();
         
 

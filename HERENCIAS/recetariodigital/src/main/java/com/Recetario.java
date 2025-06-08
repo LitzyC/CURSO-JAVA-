@@ -17,7 +17,7 @@ public class Recetario {
         System.out.println("Recetas disponibles:");
         for(Receta receta : recetas){
             String tipo=receta instanceof RecetaDulce ? "Dulce" : "Salada";
-            System.out.println(receta.getNombre() + " (" + tipo + ")" + receta.getIngredientes.size() + " ingredientes)");
+            System.out.println(receta.getNombre() + " (" + tipo + ") " + receta.getIngredientes().size() + " ingredientes)");
         }
     }
 

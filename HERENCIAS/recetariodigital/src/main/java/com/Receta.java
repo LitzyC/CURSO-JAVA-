@@ -35,6 +35,8 @@ public abstract class Receta {
     
     public abstract String descripcionReceta();
 }
+
+
 class RecetaDulce extends Receta{
 
     public RecetaDulce(String nombre){

@@ -18,7 +18,7 @@ public class Empleado {
 
 }
 
-private class InnerEmpleado extends Empleado {
+class InnerEmpleado extends Empleado {
     
     private String departamento;
 

@@ -24,13 +24,31 @@ public abstract class Videojuego {
 }
 
 class VideojuegoRol extends Videojuego{
-
+    public VideojuegoRol(String titulo, String desarrolladora, double precio) {
+        super(titulo, desarrolladora, precio);
+    }
+    @Override
+    public String getDescripcion() {
+        return "Roles.";
+    }
 }
 
 class VideojuegoDisparos extends Videojuego{
-
+    public VideojuegoDisparos(String titulo, String desarrolladora, double precio) {
+        super(titulo, desarrolladora, precio);
+    }
+    @Override
+    public String getDescripcion() {
+        return "Disparos.";
+    }
 }
 
 class VideojuegoPuzzle extends Videojuego{
-
+    public VideojuegoPuzzle(String titulo, String desarrolladora, double precio) {
+        super(titulo, desarrolladora, precio);
+    }
+    @Override
+    public String getDescripcion() {
+        return "Puzzle.";
+    }
 }

@@ -24,31 +24,41 @@ public abstract class Videojuego {
 }
 
 class VideojuegoRol extends Videojuego{
-    public VideojuegoRol(String titulo, String desarrolladora, double precio) {
+    private int duracionHistoria;
+    
+    public VideojuegoRol(String titulo, String desarrolladora, double precio, int duracionHistoria) {
         super(titulo, desarrolladora, precio);
+        this.duracionHistoria = duracionHistoria;
     }
     @Override
     public String getDescripcion() {
-        return "Roles.";
+        return "Videojuego de Rol. Duración de la historia: " + duracionHistoria + " horas.";
     }
 }
 
 class VideojuegoDisparos extends Videojuego{
-    public VideojuegoDisparos(String titulo, String desarrolladora, double precio) {
+    private boolean modosMultijugador;
+
+    public VideojuegoDisparos(String titulo, String desarrolladora, double precio, boolean modosMultijugador) {
         super(titulo, desarrolladora, precio);
+        this.modosMultijugador = modosMultijugador;
     }
     @Override
     public String getDescripcion() {
-        return "Disparos.";
+        return "Videojuego de Disparos: " + titulo + (modosMultijugador ? " con modos multijugador." : " sin modo de multijugador.");
     }
 }
 
 class VideojuegoPuzzle extends Videojuego{
-    public VideojuegoPuzzle(String titulo, String desarrolladora, double precio) {
+    private int numeroNiveles;
+
+    public VideojuegoPuzzle(String titulo, String desarrolladora, double precio, int numeroNiveles) {
         super(titulo, desarrolladora, precio);
+        this.numeroNiveles = numeroNiveles;
     }
+
     @Override
     public String getDescripcion() {
-        return "Puzzle.";
+        return "Videojuego de Puzzle: " + titulo + "con " + numeroNiveles + " niveles.";
     }
 }

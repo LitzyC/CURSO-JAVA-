@@ -26,9 +26,10 @@ public class Jugador {
 
     public void comprarVideojuego(Videojuego juego){
         videojuegosComprados.add(juego);
+        //System.out.println("\n ¡Has comprado un nuevo videojuego!");
         System.out.println("Has comprado el videojuego: " + juego.getTitulo());
     }
-
+    
     public void jugarVideojuego(String titulo, int horas){
         boolean tieneJuego = false;
         for (Videojuego juego : videojuegosComprados) {
@@ -37,11 +38,14 @@ public class Jugador {
                 break;
             }
         }
+        
         if(!tieneJuego) {
+            System.out.println("======================================");
             System.out.println("No tienes el videojuego: " + titulo);
             return;
         }
         horasJugadas.put(titulo, horasJugadas.getOrDefault(titulo, 0) + horas);
+        System.out.println("======================================");
         System.out.println("Has jugado " + horas + " horas al videojuego: " + titulo);
     }
     public void mostrarEstadisticas(){

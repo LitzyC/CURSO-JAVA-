@@ -59,6 +59,6 @@ class VideojuegoPuzzle extends Videojuego{
 
     @Override
     public String getDescripcion() {
-        return "Videojuego de Puzzle: " + titulo + "con " + numeroNiveles + " niveles.";
+        return "Videojuego de Puzzle: " + titulo + " con " + numeroNiveles + " niveles.";
     }
 }

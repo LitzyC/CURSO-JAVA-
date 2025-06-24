@@ -1,5 +1,12 @@
 -- SELECT p.Nombre AS 'NOMBRE DEL PERSONAJE', r.Nombre AS 'NOMBRE DEL REINO' FROM Personajes p INNER JOIN Reinos r ON p.ReinoID = r.ReinoID;
 -- SELECT r.Nombre AS'REINOS', p.Nombre 'PERSONAJES' FROM Reinos r LEFT JOIN Personajes p ON r.ReinoID = p.ReinoID;
 -- SELECT b.Nombre AS 'Nombre de Batalla', p.Nombre 'Participante'  FROM Batallas b  RIGHT JOIN personajes p ON b.BatallaID = p.PersonajeID;
--- SELECT Nombre AS 'REINOS', count(*) FROM Reinos GROUP BY ReinoID;
-SELECT  r.Nombre, p.COUNT() AS 'Numero Personajes' FROM Personajes p INNER JOIN Reinos r ON r.Nombre GROUP BY ReinoID;
+-- SELECT r.Nombre AS 'Reinos', COUNT(*) AS 'Numero Personajes' FROM Personajes p right JOIN reinos r ON r.ReinoID = p.ReinoID group by r.ReinoID;
+-- SELECT sum(poder) AS 'Total de Poder', tipo FROM artefactosmagicos GROUP BY tipo;
+-- SELECT Nombre, Fecha, Resultado FROM batallas GROUP BY BatallaId HAVING Resultado='Victoria';
+-- SELECT tipo, AVG(Nivel) AS 'Promedio de los Personajes' FROM Personajes GROUP BY tipo;
+-- SELECT a.Nombre AS 'Aretefacto', d.Nombre FROM artefactosmagicos a Inner Join  Personajes d ON ////////////////////////////
+-- SELECT r.Nombre AS 'REINOS', count(*) AS 'Cantidad de Personajes' FROM Personajes p Right Join reinos r ON r.ReinoID = p.ReinoID 
+-- GROUP BY r.ReinoID HAVING COUNT(*)>3;
+-- SELECT b.Nombre, p.Nombre FROM batallas b INNER JOIN personajes p ON b.BatallaID = p.PersonajeID;	 -- -----------
+SELECT p.Nombre, pb.Rol, pb.BatallaID FROM participantesbatalla pb INNER JOIN Personajes p ON p.PersonajeID = pb.BatallaID WHERE pb.BatallaID=1 ;

@@ -5,8 +5,7 @@
 -- SELECT sum(poder) AS 'Total de Poder', tipo FROM artefactosmagicos GROUP BY tipo;
 -- SELECT Nombre, Fecha, Resultado FROM batallas GROUP BY BatallaId HAVING Resultado='Victoria';
 -- SELECT tipo, AVG(Nivel) AS 'Promedio de los Personajes' FROM Personajes GROUP BY tipo;
--- SELECT a.Nombre AS 'Aretefacto', d.Nombre FROM artefactosmagicos a Inner Join  Personajes d ON ////////////////////////////
+SELECT a.Nombre AS 'ARTEFACTO', d.Nombre AS 'DUEÑO' FROM artefactosmagicos a Inner Join  Personajes d ON a.DueñoID = d.PersonajeID;
 -- SELECT r.Nombre AS 'REINOS', count(*) AS 'Cantidad de Personajes' FROM Personajes p Right Join reinos r ON r.ReinoID = p.ReinoID 
 -- GROUP BY r.ReinoID HAVING COUNT(*)>3;
--- SELECT b.Nombre, p.Nombre FROM batallas b INNER JOIN personajes p ON b.BatallaID = p.PersonajeID;	 -- -----------
-SELECT p.Nombre, pb.Rol, pb.BatallaID FROM participantesbatalla pb INNER JOIN Personajes p ON p.PersonajeID = pb.BatallaID WHERE pb.BatallaID=1 ;
+-- SELECT p.Nombre, pb.Rol, pb.BatallaID FROM participantesbatalla pb INNER JOIN Personajes p ON p.PersonajeID = pb.BatallaID WHERE pb.BatallaID=1 ;

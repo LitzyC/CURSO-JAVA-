@@ -1,11 +1,12 @@
--- INSERT INTO Personajes (Nombre, ReinoID) VALUES ('Luna', 4);
+-- INSERT INTO Personajes (Nombre, ReinoID) SELECT 'Luna', 4 FROM Reinos WHERE Nombre='Dominio de Lunaris';
 -- INSERT INTO Reinos (Nombre, Región) VALUES ('Valle Esmeralda', 'Oeste');
--- UPDATE Reinos SET Poblacion=60000 WHERE ReinoID=1; -- Nombre='Reino de Eldoria' ------ 
--- UPDATE Personajes SET Nivel=Nivel+9 WHERE PersonajeID=3; -- Nombre='Gorim'
--- DELETE FROM Reinos WHERE ReinoID=5; -- Nombre='Principado de Solstheim';
--- INSERT INTO artefactosmagicos (Nombre, Poder, DueñoID) SELECT DueñoID, 6 FROM Personajes; /////////
+-- UPDATE Reinos SET Poblacion=60000 WHERE Nombre='Reino de Eldoria';
+-- UPDATE Personajes SET Nivel=Nivel+9 WHERE Nombre='Gorim';
+-- DELETE FROM Reinos WHERE Nombre='Principado de Solstheim';
+-- INSERT INTO Personajes (Nombre, PersonajeID) VALUES ('Bakugou', 6);
+-- INSERT INTO artefactosmagicos (Nombre, Poder, DueñoID) VALUES ('Escudo de la Esperanza', 85, 6);
 -- UPDATE artefactosmagicos SET DueñoID=7 WHERE Nombre='Espada de Fuego';
 -- DELETE FROM Personajes WHERE Nombre='Thorvald';
 -- UPDATE Reinos SET Región='Norte' WHERE Nombre='Dominio de Lunaris';
 -- UPDATE Participantesbatalla SET BatallaID=3, Rol='Atacante' WHERE PersonajeID=19;
-SELECT * FROM participantesbatalla WHERE PersonajeID=19;
+SELECT * FROM participantesbatalla;

@@ -1,4 +1,5 @@
--- INSERT INTO Personajes (Nombre, ReinoID) SELECT 'Luna', 4 FROM Reinos WHERE Nombre='Dominio de Lunaris';
+INSERT INTO Personajes (Nombre, ReinoID) SELECT 'Luna', 4 FROM Reinos WHERE Nombre='Dominio de Lunaris';
+DELETE FROM Personajes where Nombre='Luna';
 -- INSERT INTO Reinos (Nombre, Región) VALUES ('Valle Esmeralda', 'Oeste');
 -- UPDATE Reinos SET Poblacion=60000 WHERE Nombre='Reino de Eldoria';
 -- UPDATE Personajes SET Nivel=Nivel+9 WHERE Nombre='Gorim';
@@ -9,4 +10,4 @@
 -- DELETE FROM Personajes WHERE Nombre='Thorvald';
 -- UPDATE Reinos SET Región='Norte' WHERE Nombre='Dominio de Lunaris';
 -- UPDATE Participantesbatalla SET BatallaID=3, Rol='Atacante' WHERE PersonajeID=19;
-SELECT * FROM participantesbatalla;
+SELECT * FROM Personajes;

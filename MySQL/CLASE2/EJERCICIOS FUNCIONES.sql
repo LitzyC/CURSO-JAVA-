@@ -5,8 +5,10 @@ BEGIN
 	DECLARE sumaPoderArtefacto DECIMAL (5,2);
     
     SELECT SUM(Poder) INTO sumaPoderArtefacto
-    FROM Artefactosmagicos WHERE ArtefactoID = artefactoPoder;
+    FROM Artefactosmagicos 
+    WHERE DueñoID = artefactoPoder;
     RETURN sumaPoderArtefacto;
 END //
 DELIMITER ;
-SELECT TotalPoderArtefactos(5);
+SELECT TotalPoderArtefactos(7);
+SELECT SUM(Poder) FROM Artefactosmagicos group by DueñoID=7;

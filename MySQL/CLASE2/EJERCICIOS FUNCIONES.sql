@@ -1,9 +1,12 @@
 DELIMITER //
-CREATE FUNCTION NombreReinos(ReinoID INT) RETURNS INT
+CREATE FUNCTION TotalPoderArtefactos(artefactoPoder INT) RETURNS DECIMAL(5,2)
+READS SQL DATA
 BEGIN
-	SELECT Nombre FROM Personajes;
-    return ReinoID;
+	DECLARE sumaPoderArtefacto DECIMAL (5,2);
+    
+    SELECT SUM(Poder) INTO sumaPoderArtefacto
+    FROM Artefactosmagicos WHERE ArtefactoID = artefactoPoder;
+    RETURN sumaPoderArtefacto;
 END //
 DELIMITER ;
--- DROP FUNCTION NivelPromedioReino;
-SELECT NombreReinos(1) AS 'Nombre del Rieno';
+SELECT TotalPoderArtefactos(5);
